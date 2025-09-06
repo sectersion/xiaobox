@@ -1,0 +1,69 @@
+# XIAOBOX Global Configuration
+# This file controls all aspects of your XIAOBOX deployment
+# Edit this file, then run ./generate-compose.sh to apply changes
+
+# Service Enable/Disable
+services:
+  nginx: true          # Main web server
+  traefik: true        # Reverse proxy/load balancer
+  thelounge: true      # IRC client
+  minecraft: true      # Minecraft server
+  bungeecord: true     # Minecraft proxy
+  code_server: true   # VS Code in browser
+  # irc: false         # IRC server (disabled by default)
+
+# Port Configuration
+ports:
+  nginx: 80
+  traefik_dashboard: 8080
+  thelounge: 9000
+  code_server: 8082
+  minecraft: 25565
+  bungeecord: 25577
+
+# Minecraft Configuration
+minecraft:
+  version: "1.12"
+  motd: "XIAOBOX Minecraft Server"
+  max_players: 20
+  difficulty: 1
+  online_mode: false
+
+# TheLounge Configuration
+thelounge:
+  public: true
+  password: "student"
+  theme: "thelounge-theme-cg"
+
+# Code Server Configuration
+code_server:
+  password: "student"
+  workspace: "/config/workspace"
+
+# Network Configuration
+network:
+  name: "xiaobox-net"
+  driver: "bridge"
+
+# Docker Configuration
+docker:
+  compose_version: "3.8"
+  restart_policy: "unless-stopped"
+
+# Security Configuration
+security:
+  traefik_insecure: true
+  expose_ports: true
+
+# File Paths (relative to xiaobox/docker/)
+paths:
+  public: "../public"
+  server_data: "./server"
+  code_workspace: "./code-workspace"
+  configs: "./"
+
+# Advanced Configuration
+advanced:
+  nginx_worker_connections: 1024
+  minecraft_memory: "1G"
+  code_server_memory: "512M"

@@ -1,29 +1,18 @@
-[14:50:27] [Server thread/INFO]: Starting minecraft server version 1.12
-[14:50:27] [Server thread/INFO]: Loading properties
-[14:50:27] [Server thread/INFO]: Default game type: SURVIVAL
-[14:50:27] [Server thread/INFO]: Generating keypair
-[14:50:27] [Server thread/INFO]: Starting Minecraft server on *:25565
-[14:50:27] [Server thread/INFO]: Using epoll channel type
-[14:50:27] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[14:50:27] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[14:50:27] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
-[14:50:27] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[14:50:27] [Server thread/INFO]: Preparing level "world"
-[14:50:28] [Server thread/INFO]: Loaded 488 advancements
-[14:50:29] [Server thread/INFO]: Preparing start region for level 0
-[14:50:30] [Server thread/INFO]: Preparing spawn area: 18%
-[14:50:32] [Server thread/INFO]: Preparing spawn area: 41%
-[14:50:33] [Server thread/INFO]: Preparing spawn area: 71%
-[14:50:34] [Server thread/INFO]: Preparing spawn area: 98%
-[14:50:34] [Server thread/INFO]: Done (6.398s)! For help, type "help" or "?"
-[14:50:34] [Server thread/INFO]: Starting remote control listener
-[14:50:34] [RCON Listener #1/INFO]: RCON running on 0.0.0.0:25575
-[15:12:49] [RCON Listener #1/INFO]: Rcon connection from: /0:0:0:0:0:0:0:1
-[15:12:49] [RCON Client #2/INFO]: [Rcon: Stopping the server]
-[15:12:49] [Server thread/INFO]: Stopping server
-[15:12:49] [Server thread/INFO]: Saving players
-[15:12:49] [Server thread/INFO]: Saving worlds
-[15:12:49] [Server thread/INFO]: Saving chunks for level 'world'/overworld
-[15:12:49] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
-[15:12:49] [Server thread/INFO]: Saving chunks for level 'world'/the_end
-[15:12:49] [Server Shutdown Thread/INFO]: Stopping server
+[15:40:48] [Server thread/INFO]: Starting minecraft server version 1.12
+[15:40:48] [Server thread/INFO]: Loading properties
+[15:40:48] [Server thread/INFO]: Default game type: SURVIVAL
+[15:40:48] [Server thread/INFO]: Generating keypair
+[15:40:48] [Server thread/INFO]: Starting Minecraft server on *:25565
+[15:40:48] [Server thread/INFO]: Using epoll channel type
+[15:40:49] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[15:40:49] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[15:40:49] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[15:40:49] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[15:40:49] [Server thread/INFO]: Preparing level "world"
+[15:40:49] [Server thread/INFO]: Loaded 488 advancements
+[15:40:49] [Server thread/INFO]: Preparing start region for level 0
+[15:40:51] [Server thread/INFO]: Preparing spawn area: 0%
+[15:40:52] [Server thread/INFO]: Preparing spawn area: 72%
+[15:40:52] [Server thread/INFO]: Done (3.550s)! For help, type "help" or "?"
+[15:40:52] [Server thread/INFO]: Starting remote control listener
+[15:40:52] [RCON Listener #1/INFO]: RCON running on 0.0.0.0:25575

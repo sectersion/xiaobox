@@ -20,6 +20,19 @@ if ! command -v docker-compose &> /dev/null; then
     exit 1
 fi
 
+# Generate docker-compose.yml from config if script exists
+if [[ -f "../generate-compose.py" ]]; then
+    echo "Generating docker-compose.yml from config.yml..."
+    cd ..
+    python3 generate-compose.py 2>/dev/null || echo "⚠️  Config generation failed - using existing docker-compose.yml"
+    cd docker
+elif [[ -f "generate-compose.py" ]]; then
+    echo "Generating docker-compose.yml from config.yml..."
+    python3 generate-compose.py 2>/dev/null || echo "⚠️  Config generation failed - using existing docker-compose.yml"
+else
+    echo "Config generation script not found - using existing docker-compose.yml"
+fi
+
 # Navigate to docker directory
 if [[ -d "docker" ]]; then
     cd docker
@@ -47,8 +60,10 @@ echo ""
 echo "Access your services:"
 echo "   - Main site: http://localhost"
 echo "   - Eaglercraft: http://localhost"
+echo "   - VS Code Server: http://localhost:8082 (password: student)"
 echo "   - TheLounge IRC: http://localhost:9000"
-echo "   - WebXash games: http://localhost/webxash"
+echo "   - Traefik Dashboard: http://localhost:8080"
 echo ""
 echo "To stop all services: docker-compose down"
 echo "To view logs: docker-compose logs -f"
+echo "To reconfigure: edit ../config.yml and run ../generate-compose.sh"

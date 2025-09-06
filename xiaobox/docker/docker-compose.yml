@@ -71,28 +71,24 @@ services:
       TYPE: WATERFALL
       CFG_MOTD: Minecraft Eagler Server Hosted By Mirthfather
       REPLACE_ENV_VARIABLES: "true"
-      PLUGINS: "https://gitlab.com/lax1dude/eaglercraftx-1.12/-/raw/main/gateway/EaglercraftXBungee/EaglerXBungee-Latest.jar"
     volumes:
       - ./eagler-bungeecord-config.yml:/config/config.yml
       - ./server/bungee:/server
     networks:
       - traefik-net
 
-  irc:
-    image: oragono/oragono:latest
-    container_name: irc
-    volumes:
-      - ./oragono-config.yaml:/ircd/ircd.yaml
-      - ./server/irc:/ircd/data
-    networks:
-      - traefik-net
 
-  webxash:
-    build: https://github.com/x8BitRain/webXash.git
-    container_name: webxash
+  code-server:
+    image: linuxserver/code-server:latest
+    container_name: code-server
     ports:
-      - "8080:8080"
+      - "8082:8443"
     volumes:
-      - ./webxash:/data
+      - ./code-workspace:/config/workspace
+      - /tmp/code-server:/config/.local/share/code-server
+    environment:
+      - PASSWORD=student
+      - DEFAULT_WORKSPACE=/config/workspace
     networks:
       - traefik-net
+    restart: unless-stopped

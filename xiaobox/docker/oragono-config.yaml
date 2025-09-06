@@ -1,6 +1,9 @@
 # Oragono IRC server configuration
 # Basic configuration for local development
 
+network:
+  name: "xiaobox"
+
 server:
   name: "irc.localhost"
   listen:
@@ -29,8 +32,8 @@ logging:
 datastore:
   path: /ircd/data
 
-limits:
-  nicklen: 32
-  channellen: 64
-  awaylen: 200
-  topiclen: 390
+# limits:
+#   nicklen: 128
+#   channellen: 256
+#   awaylen: 1000
+#   topiclen: 2000
