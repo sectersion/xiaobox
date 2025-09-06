@@ -1,0 +1,36 @@
+# Oragono IRC server configuration
+# Basic configuration for local development
+
+server:
+  name: "irc.localhost"
+  listen:
+    - ":6667"
+  motd: |
+    "    X I A O B O X    "
+    "                     "
+    "  Welcome to XIAOBOX "
+    "    IRC Server!      "
+    "                     "
+    "  Enjoy your stay!   "
+
+accounts:
+  registration:
+    enabled: true
+    allow-before-connect: true
+
+channels:
+  default-modes: +nt
+
+logging:
+  - method: stderr
+    type: "*"
+    level: info
+
+datastore:
+  path: /ircd/data
+
+limits:
+  nicklen: 32
+  channellen: 64
+  awaylen: 200
+  topiclen: 390

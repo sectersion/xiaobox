@@ -12,9 +12,11 @@ services:
       - "--api.insecure=true"
       - "--providers.docker=true"
       - "--entrypoints.web.address=:80"
+      - "--entrypoints.web9000.address=:9000"
     ports:
       - "80:80"
       - "8080:8080" # Traefik dashboard
+      - "9000:9000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
@@ -28,6 +30,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nginx.rule=Host(`localhost`)"
+      - "traefik.http.routers.nginx.entrypoints=web"
       - "traefik.http.services.nginx.loadbalancer.server.port=80"
     volumes:
       - ../public:/usr/share/nginx/html:ro
@@ -35,3 +38,61 @@ services:
       - traefik-net
 
   
+  thelounge:
+    build:
+      context: .
+      dockerfile: thelounge.Dockerfile
+    container_name: thelounge
+    volumes:
+      - ./thelounge-config.js:/var/opt/thelounge/config.js
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.thelounge.rule=Host(`localhost`)"
+      - "traefik.http.routers.thelounge.entrypoints=web9000"
+      - "traefik.http.services.thelounge.loadbalancer.server.port=9000"
+    networks:
+      - traefik-net
+
+
+  mc:
+    image: itzg/minecraft-server:java8-multiarch
+    environment:
+      EULA: "TRUE"
+      ONLINE_MODE: "FALSE"
+      VERSION: 1.12
+    volumes:
+      - ./server/mc:/data
+    networks:
+      - traefik-net
+
+  bungeecord:
+    image: itzg/bungeecord
+    environment:
+      TYPE: WATERFALL
+      CFG_MOTD: Minecraft Eagler Server Hosted By Mirthfather
+      REPLACE_ENV_VARIABLES: "true"
+      PLUGINS: "https://gitlab.com/lax1dude/eaglercraftx-1.12/-/raw/main/gateway/EaglercraftXBungee/EaglerXBungee-Latest.jar"
+    volumes:
+      - ./eagler-bungeecord-config.yml:/config/config.yml
+      - ./server/bungee:/server
+    networks:
+      - traefik-net
+
+  irc:
+    image: oragono/oragono:latest
+    container_name: irc
+    volumes:
+      - ./oragono-config.yaml:/ircd/ircd.yaml
+      - ./server/irc:/ircd/data
+    networks:
+      - traefik-net
+
+  webxash:
+    build: https://github.com/x8BitRain/webXash.git
+    container_name: webxash
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./webxash:/data
+    networks:
+      - traefik-net
