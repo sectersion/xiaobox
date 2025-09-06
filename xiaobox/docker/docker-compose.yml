@@ -5,33 +5,14 @@ networks:
     driver: bridge
 
 services:
-  traefik:
-    image: traefik:v2.10
-    container_name: traefik
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.web9000.address=:9000"
-    ports:
-      - "80:80"
-      - "8080:8080" # Traefik dashboard
-      - "9000:9000"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    networks:
-      - traefik-net
   
 
 
   nginx:
     build: ./nginx
     container_name: nginx
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.nginx.rule=Host(`localhost`)"
-      - "traefik.http.routers.nginx.entrypoints=web"
-      - "traefik.http.services.nginx.loadbalancer.server.port=80"
+    ports:
+      - "80:80"
     volumes:
       - ../public:/usr/share/nginx/html:ro
     networks:
@@ -39,17 +20,12 @@ services:
 
   
   thelounge:
-    build:
-      context: .
-      dockerfile: thelounge.Dockerfile
+    image: thelounge/thelounge:latest
     container_name: thelounge
+    ports:
+      - "9000:9000"
     volumes:
       - ./thelounge-config.js:/var/opt/thelounge/config.js
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.thelounge.rule=Host(`localhost`)"
-      - "traefik.http.routers.thelounge.entrypoints=web9000"
-      - "traefik.http.services.thelounge.loadbalancer.server.port=9000"
     networks:
       - traefik-net
 
@@ -67,6 +43,8 @@ services:
 
   bungeecord:
     image: itzg/bungeecord
+    ports:
+      - "25577:25577"
     environment:
       TYPE: WATERFALL
       CFG_MOTD: Minecraft Eagler Server Hosted By Mirthfather
