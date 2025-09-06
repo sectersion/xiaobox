@@ -1,0 +1,34 @@
+[17:06:11] [main/INFO]: Using mbed TLS based native cipher.
+[17:06:11] [main/INFO]: Using zlib based native compressor.
+[17:06:11] [main/INFO]: Enabled Waterfall version git:Waterfall-Bootstrap:1.21-R0.4-SNAPSHOT:d7f3bfd:598
+[17:06:11] [main/WARN]: Waterfall has reached end of life and is no longer maintained. We recommend you transition to Velocity (https://papermc.io/software/velocity). For more information, see the announcement (https://forums.papermc.io/threads/1088/).
+[17:06:11] [main/INFO]: Not on Windows, attempting to use enhanced EpollEventLoop
+[17:06:11] [main/INFO]: Epoll is working, utilising it!
+[17:06:11] [main/INFO]: Discovered module: ModuleSpec(name=cmd_alert, file=modules/cmd_alert.jar, provider=JenkinsModuleSource())
+[17:06:11] [main/INFO]: Discovered module: ModuleSpec(name=cmd_find, file=modules/cmd_find.jar, provider=JenkinsModuleSource())
+[17:06:11] [main/INFO]: Discovered module: ModuleSpec(name=cmd_list, file=modules/cmd_list.jar, provider=JenkinsModuleSource())
+[17:06:11] [main/INFO]: Discovered module: ModuleSpec(name=cmd_send, file=modules/cmd_send.jar, provider=JenkinsModuleSource())
+[17:06:11] [main/INFO]: Discovered module: ModuleSpec(name=cmd_server, file=modules/cmd_server.jar, provider=JenkinsModuleSource())
+[17:06:11] [main/INFO]: Discovered module: ModuleSpec(name=reconnect_yaml, file=modules/reconnect_yaml.jar, provider=JenkinsModuleSource())
+[17:06:11] [main/INFO]: Loaded plugin reconnect_yaml version git:reconnect_yaml:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Loaded plugin cmd_find version git:cmd_find:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Loaded plugin cmd_server version git:cmd_server:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Loaded plugin cmd_alert version git:cmd_alert:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Loaded plugin cmd_send version git:cmd_send:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Loaded plugin cmd_list version git:cmd_list:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/WARN]: Forced host server pvp is not defined
+[17:06:11] [main/INFO]: Enabled plugin reconnect_yaml version git:reconnect_yaml:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Enabled plugin cmd_find version git:cmd_find:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Enabled plugin cmd_server version git:cmd_server:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Enabled plugin cmd_alert version git:cmd_alert:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Enabled plugin cmd_send version git:cmd_send:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [main/INFO]: Enabled plugin cmd_list version git:cmd_list:1.21-R0.4-SNAPSHOT:d7f3bfd:598 by WaterfallMC
+[17:06:11] [Netty Boss IO Thread #0/INFO]: Listening on /0.0.0.0:25577
+[17:06:14] [Netty Worker IO Thread #0/INFO]: [/[0:0:0:0:0:0:0:1]:43306] <-> InitialHandler has pinged
+[17:06:45] [Netty Worker IO Thread #1/INFO]: [/[0:0:0:0:0:0:0:1]:38256] <-> InitialHandler has pinged
+[17:07:15] [Netty Worker IO Thread #2/INFO]: [/[0:0:0:0:0:0:0:1]:33094] <-> InitialHandler has pinged
+[17:07:45] [Netty Worker IO Thread #3/INFO]: [/[0:0:0:0:0:0:0:1]:35754] <-> InitialHandler has pinged
+[17:08:15] [Netty Worker IO Thread #4/INFO]: [/[0:0:0:0:0:0:0:1]:50066] <-> InitialHandler has pinged
+[17:08:45] [Netty Worker IO Thread #5/INFO]: [/[0:0:0:0:0:0:0:1]:50542] <-> InitialHandler has pinged
+[17:09:15] [Netty Worker IO Thread #6/INFO]: [/[0:0:0:0:0:0:0:1]:57052] <-> InitialHandler has pinged
+[17:09:45] [Netty Worker IO Thread #7/INFO]: [/[0:0:0:0:0:0:0:1]:54592] <-> InitialHandler has pinged
